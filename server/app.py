@@ -40,7 +40,6 @@ def create_restaurant_pizza():
     restaurant_id = data.get('restaurant_id')
     price = data.get('price')
 
-    # Validate input
     if not pizza_id or not restaurant_id:
         return jsonify({"errors": ["pizza_id and restaurant_id are required"]}), 400
     if not db.session.get(Pizza, pizza_id) or not db.session.get(Restaurant, restaurant_id):
